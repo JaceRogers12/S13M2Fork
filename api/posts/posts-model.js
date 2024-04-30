@@ -1,16 +1,5 @@
 const db = require('../../data/db-config');
 
-module.exports = {
-  find,
-  findById,
-  insert,
-  update,
-  remove,
-  findPostComments,
-  findCommentById,
-  insertComment,
-};
-
 function find() {
   return db('posts');
 }
@@ -56,3 +45,14 @@ function insertComment(comment) {
     .insert(comment)
     .then(ids => ({ id: ids[0] }));
 }
+
+module.exports = {
+  find,
+  findById,
+  insert,
+  update,
+  remove,
+  findPostComments,
+  findCommentById,
+  insertComment,
+};
